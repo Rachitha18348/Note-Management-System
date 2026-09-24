@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Welcome Back</h1>
+
+    {% if info %}
+        <p>{{ info }}</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+
+        <label>Email</label>
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p>
+        <a href="{{ url_for('forgotpassword') }}">Forgot Password?</a>
+    </p>
+
+    <p>
+        Don't have an account?
+        <a href="{{ url_for('register') }}">Register</a>
+    </p>
+
+</div>
+
+{% endblock %}

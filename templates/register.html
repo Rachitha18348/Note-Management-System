@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/register.css">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <h1>Create Account</h1>
+
+    <form method="POST" action="{{ url_for('register') }}">
+
+        <label>Name</label>
+        <input type="text" name="uname" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="{{ url_for('login') }}">Login</a>
+    </p>
+
+</div>
+
+
+
+{% endblock %}

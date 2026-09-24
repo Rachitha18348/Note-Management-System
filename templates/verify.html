@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}Verify OTP{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/verify.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Verify OTP</h1>
+
+    <p class="description">
+        Enter the OTP sent to your registered email.
+    </p>
+
+    <form>
+
+        <label>OTP</label>
+        <input type="text" name="otp" placeholder="Enter 6-digit OTP">
+
+        <button type="submit">Verify OTP</button>
+
+    </form>
+
+    <p>
+        Didn't receive the OTP?
+        <a href="{{ url_for('forgotpassword') }}">Try Again</a>
+    </p>
+
+</div>
+
+{% endblock %}
+

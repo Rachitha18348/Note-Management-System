@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Note{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/editnote.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="edit-page">
+
+    <div class="edit-container">
+
+        <div class="edit-header">
+
+            <span class="edit-label">EDIT NOTE</span>
+
+            <h1>Edit Your Note</h1>
+
+            <p>
+                Update your note and save your changes.
+            </p>
+
+        </div>
+
+
+        <form method="POST">
+
+            <label for="content">
+                Note Content
+            </label>
+
+            <textarea
+                id="content"
+                name="content"
+                rows="10"
+                placeholder="Write your note here..."
+                required
+            >{{ note['content'] }}</textarea>
+
+
+            <div class="edit-actions">
+
+                <a href="{{ url_for('dashboard') }}" class="cancel-button">
+                    Cancel
+                </a>
+
+                <button type="submit" class="save-button">
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

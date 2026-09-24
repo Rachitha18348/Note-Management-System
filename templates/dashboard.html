@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- ================= HEADER ================= -->
+
+    <section class="dashboard-header">
+
+        <div>
+            <span class="dashboard-label">MY DASHBOARD</span>
+
+            <h1>Welcome Back, {{ username }}!</h1>
+
+            <p>
+                Create, manage and organize your notes
+                in one simple place.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CREATE NOTE ================= -->
+
+    <section class="create-section">
+
+        <div class="create-card">
+
+            <div class="create-heading">
+
+                <div>
+                    <h2>Create a New Note</h2>
+
+                    <p>
+                        Write down your thoughts, ideas or important information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form method="POST" action="{{ url_for('create_note') }}">
+
+                <textarea name="note" placeholder="Write your note here..." required></textarea>
+
+                <div class="create-footer">
+
+                    <span>
+                        Keep your ideas organized.
+                    </span>
+
+                    <button type="submit">
+                        + Save Note
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NOTES ================= -->
+
+    <section class="notes-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">YOUR NOTES</span>
+
+                <h2>My Notes</h2>
+            </div>
+
+        </div>
+
+
+        {% if notes %}
+
+        <div class="notes-container">
+
+            {% for i in notes %}
+
+            <div class="note-card">
+
+                <div class="note-card-header">
+
+                    <span class="note-title">
+                        Note
+                    </span>
+
+                    <span class="note-id">
+                        #{{ i[0] }}
+                    </span>
+
+                </div>
+
+
+                <p class="note-content">
+                    {{ i[2] }}
+                </p>
+
+
+                <div class="note-card-footer">
+
+                    <a href="{{ url_for('read_note', note_id=i[0]) }}" class="read-button">
+                        Read
+                    </a>
+
+                    <a href="{{ url_for('edit_note', note_id=i[0]) }}" class="edit-button">
+                        Edit
+                    </a>
+
+                    <a href="{{ url_for('delete_note', note_id=i[0]) }}" class="delete-button">
+                        Delete
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-notes">
+
+            <h3>No Notes Yet</h3>
+
+            <p>
+                You haven't created any notes yet.
+                Create your first note above.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,199 @@
+/* ================= EDIT PAGE ================= */
+
+.edit-page {
+    min-height: calc(100vh - 72px);
+
+    padding: 60px 8% 80px;
+
+    background: #FFF8F0;
+}
+
+
+/* ================= EDIT CONTAINER ================= */
+
+.edit-container {
+    max-width: 750px;
+
+    margin: auto;
+    padding: 35px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F0DADA;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(128, 0, 0, 0.05);
+}
+
+
+/* ================= HEADER ================= */
+
+.edit-label {
+    color: #800000;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.edit-header h1 {
+    margin: 10px 0 8px;
+
+    color: #5C0000;
+
+    font-size: 30px;
+}
+
+
+.edit-header p {
+    margin: 0 0 30px;
+
+    color: #777777;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================= FORM ================= */
+
+.edit-container label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #5C0000;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.edit-container textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    resize: vertical;
+
+    border: 1px solid #D9BABA;
+    border-radius: 8px;
+
+    color: #333333;
+    background: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    outline: none;
+}
+
+
+.edit-container textarea:focus {
+    border-color: #800000;
+}
+
+
+.edit-container textarea::placeholder {
+    color: #AAAAAA;
+}
+
+
+/* ================= ACTIONS ================= */
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+.edit-actions a,
+.edit-actions button {
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+/* ================= CANCEL ================= */
+
+.cancel-button {
+    color: #800000;
+
+    background: #FFFFFF;
+
+    border: 1px solid #800000;
+}
+
+
+.cancel-button:hover {
+    background: #F5E6E6;
+}
+
+
+/* ================= SAVE ================= */
+
+.save-button {
+    color: #FFFFFF;
+
+    background: #800000;
+
+    border: 1px solid #800000;
+}
+
+
+.save-button:hover {
+    background: #5C0000;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    .edit-page {
+        padding: 40px 5% 60px;
+    }
+
+
+    .edit-container {
+        padding: 25px;
+    }
+
+
+    .edit-header h1 {
+        font-size: 26px;
+    }
+
+
+    .edit-actions {
+        flex-direction: column-reverse;
+    }
+
+
+    .edit-actions a,
+    .edit-actions button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}

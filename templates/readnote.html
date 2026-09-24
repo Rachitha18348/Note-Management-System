@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Read Note{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/readnote.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="read-page">
+
+    <div class="read-container">
+
+        <div class="read-header">
+
+            <span class="read-label">YOUR NOTE</span>
+
+            <h1>Read Note</h1>
+
+            <p>
+                View your note below.
+            </p>
+
+        </div>
+
+
+        <div class="note-content">
+
+            {{ note['content'] }}
+
+        </div>
+
+
+        <div class="read-actions">
+
+            <a
+                href="{{ url_for('dashboard') }}"
+                class="back-button"
+            >
+                Back to Dashboard
+            </a>
+
+            <a
+                href="{{ url_for('edit_note', note_id=note['id']) }}"
+                class="edit-button"
+            >
+                Edit Note
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
