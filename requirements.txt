@@ -2,3 +2,4 @@ Flask
 bcrypt
 itsdangerous
 mysql-connector-python
+python-dotenv
