@@ -7,12 +7,14 @@ from database import db
 
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from mail import send_email
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 
 app = Flask(__name__)
 
-app.secret_key = 'notes@22'
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 s=URLSafeTimedSerializer(app.secret_key)
 
 
